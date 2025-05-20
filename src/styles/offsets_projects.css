@@ -1,0 +1,40 @@
+.projects-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+    align-items: center;
+  }
+
+.offset_button{
+  background-color: white;
+  border-radius: 5px;
+  padding: 10px;
+  margin: 5rem;
+  color: black;
+}
+
+img{
+  width:300px;
+  height:300px;
+}
+
+.container{
+  text-align: center;
+}
+
+.section-title{
+    background: linear-gradient(to right, rgb(27, 42, 159), #145c26); /* Adjust green shade as needed */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 1000;
+    font-style: bold;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-align: center;
+}

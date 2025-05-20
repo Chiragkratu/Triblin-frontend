@@ -1,0 +1,113 @@
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 5rem;
+    padding: 30px;
+    margin-top: 3rem;
+  }
+
+  .section-title{
+    background: linear-gradient(to right, rgb(12, 39, 246), #0ef344); /* Adjust green shade as needed */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 1000;
+    font-style: bold;
+  }
+  .section-subtitle{
+    font-size: 20px;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .feature-card {
+    border-radius: 8px;
+    padding: 2.5rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-style:italic;
+  }
+  
+  .feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  }
+  
+  .feature-icon {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary);
+  }
+  
+  .feature-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+  }
+  
+  .feature-card p {
+    color: var(--gray);
+    line-height: 1.6;
+  }
+  
+  /* How It Works */
+  .how-it-works {
+    background-color: var(--light);
+  }
+  
+  .steps {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .step {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+  
+  .step-number {
+    background-color: var(--primary);
+    color: var(--white);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    margin-top: 2rem;
+  }
+  
+  .step-content h3 {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+    text-align: left;
+    
+    color: var(--dark);
+  }
+  
+  .step-content p {
+    color: var(--gray);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+  }
+  
+  .mt-5 {
+    margin-top: 3rem;
+  }
+
+  .Start_calculating{
+    border-radius: 5px;
+    padding: 20px;
+    background-color: white;
+    color: black;
+  }

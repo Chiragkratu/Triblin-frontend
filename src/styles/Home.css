@@ -1,0 +1,156 @@
+/* Hero Section */
+
+
+
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    text-align: center;
+    background-image: url('/api/placeholder/1920/1080');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f0f0f0;
+    z-index: 1;
+  }
+  
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+  }
+  
+  
+  .hero p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+  
+  .hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .hero_button{
+    background-color: #7cf899;
+    color: black;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
+    font-family: 'Times New Roman', Times, serif;
+  }
+
+
+  
+
+  .heading{
+    background: linear-gradient(to right, rgb(27, 42, 159), #145c26); /* Adjust green shade as needed */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    font-size: 30px;
+    font-weight: 1000;
+    font-style: bold;
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+/* why triblin section  */
+
+.why-triblin{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.why-triblin-cards{
+    display: flex;
+    padding: 20px 20px;
+    gap: 50px;
+    justify-content: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+.triblin-list {
+    padding: 10px 10px;
+    list-style-type: none;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+.triblin-list li{
+  padding-left: 20px;
+  align-self: start;
+}
+
+
+/* government_enterprices */
+.goverments_enterprices{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.goverments-enterprises-list{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  list-style-type: none;
+  font-size: 20px;
+  align-items: start;
+}
+
+/* Our vision and what's comming */
+.ourvision{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+}
+
+  @media screen and (max-width: 968px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+  
+    .hero p {
+      font-size: 1.2rem;
+    }
+  
+  
+    .hero_button{
+      padding: 8px;
+      font-size: 16px;
+    }
+  
+    .why-triblin-cards{
+      flex-direction: column;
+      gap: 20px;
+    }
+  
+    .triblin-list{
+      font-size: 18px;
+    }
+  }
