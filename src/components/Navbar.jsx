@@ -42,7 +42,7 @@ const Navbar = () => {
         </Link>
 
         <div className="menu-icon" onClick={toggleMenu}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
+          {isOpen ? <X size={24}/> : <Menu size={24} />}
         </div>
 
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>

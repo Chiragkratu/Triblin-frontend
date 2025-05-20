@@ -83,6 +83,7 @@
   @media screen and (max-width: 1028px) {
     .navbar-container {
       padding: 0 1rem;
+      background-color: var(--white);
     }
   
     .menu-icon {
@@ -109,11 +110,12 @@
       opacity: 1;
       transition: all 0.5s ease;
       z-index: 1;
-      background-color: black;
+      background-color:white;
     }
   
     .nav-item {
       margin: 1.5rem 0;
+      color:black
     }
 
     .nav-item:hover{

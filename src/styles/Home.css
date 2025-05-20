@@ -145,7 +145,7 @@
       font-size: 16px;
     }
   
-    .why-triblin-cards{
+    .why-triblin-cards{ 
       flex-direction: column;
       gap: 20px;
     }
