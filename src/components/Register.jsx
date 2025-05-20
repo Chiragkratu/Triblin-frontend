@@ -70,14 +70,14 @@ function Register() {
     setError('');
     
     try {
-      const response = await fetch('http://localhost:8000/api/register/', {
+      const response = await fetch('https://triblinbackend-production.up.railway.app/api/register/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ username, email, password }),
       });
-      
+      console.log(response);
       const data = await response.json();
       
       if (!response.ok) {

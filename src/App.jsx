@@ -21,7 +21,7 @@ function App() {
     const checkAuth = async () => {
       if (token) {
         try {
-          const response = await fetch('http://localhost:8000/api/user/', {
+          const response = await fetch('https://triblinbackend-production.up.railway.app/api/user/', {
             headers: {
               'Authorization': `Token ${token}`
             }
