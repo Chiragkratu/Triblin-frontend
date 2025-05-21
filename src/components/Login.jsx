@@ -14,21 +14,21 @@ const Loginform = styled.form`
         background-color: white;
         border: 1px solid black;
         border-radius: 5px; 
-        padding: 20px;  
+        padding: 10px;  
         width: 300px;
     }
 `
 
 const Buttons = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     width: 300px;
     button{
         margin:20px;
-        color: white;
-        background-color: black;
-        border: none;
-        border-radius: 5px; 
+        color: black;
+        background-color: #7cf899;
+        border: 2px solid black;
+        border-radius: 8px; 
         padding: 10px;  
         width: 100px;
     }
@@ -36,8 +36,7 @@ const Buttons = styled.div`
 
 const TriblinLogo = styled.div`
     display: flex;
-    justify-content: flex-start;
-    padding: 20px;
+    justify-content: flex-start;;
     background: linear-gradient(to right, rgb(27, 42, 159), #145c26);
     font-family: Georgia, 'Times New Roman', Times, serif;
     background-clip: text;
@@ -45,25 +44,21 @@ const TriblinLogo = styled.div`
     -webkit-background-clip: text;
     color: transparent;
     -webkit-text-fill-color: transparent;
-    font-size: 60px;
+    font-size: 40px;
     font-weight: 1000;
 `
 
 const Logincontainer=styled.div`
-    margin-top: 100px;
+    margin-top: 10px;
     border-radius: 10px;
-    border: 1px solid black;
-    margin: 100px 600px;
-    height: 60vh;
-    padding: 20px;
-    
+    height: 30vh;
 `
 
 function Login() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
-  const { login } = useContext(AuthContext);
+  const { loginuser } = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -86,7 +81,7 @@ function Login() {
         throw new Error(data.detail || 'Login failed');
       }
       
-      login(data.user, data.token);
+      loginuser(data.user, data.token);
     } catch (error) {
       setError(error.message);
     }
@@ -95,10 +90,9 @@ function Login() {
   return (
     <div className='login'>
             <TriblinLogo>
-                Triblin
+                Login
             </TriblinLogo>
             <Logincontainer className="login_container" >
-                <h1>Login</h1>
                 <Loginform className='login-form' onSubmit={handleSubmit}>
                     <input type="text" placeholder='Username' value={username} onChange={(e) =>{
                         setUsername(e.target.value)
@@ -107,9 +101,9 @@ function Login() {
                         setPassword(e.target.value)
                     }}/>
                     <Buttons>
-                        <button type="submit" onClick={()=>navigate('/login')}>Login</button>
-                        <button type="submit" onClick={()=>navigate('/register')}>Sign Up</button>
+                        <button type="submit" onClick={()=>navigate('/')}>Login</button>
                     </Buttons>
+                    
                 </Loginform>
             </Logincontainer>
         </div>

@@ -22,7 +22,7 @@
     align-items: center;
     width: 100%;
     max-width: var(--max-width);
-    padding: 0 2rem;
+    padding: 0 1rem;
   }
   
   .navbar-logo {
@@ -74,15 +74,15 @@
 
   @media (min-width:960px) and (max-width: 1350px) {
     .nav-item {
-      margin: 1.5rem 1rem;
-      font-size: 10px;
-      padding: 5px 5px;
+      margin: 1.5rem 0.5rem;
+      font-size: 12px;
+      padding: 5px 2px;
     }
   }
   
   @media screen and (max-width: 1028px) {
     .navbar-container {
-      padding: 0 1rem;
+      padding-left:3rem;
       background-color: var(--white);
     }
   
@@ -90,19 +90,20 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      padding: 10px;
     }
   
     .nav-menu {
       display: flex;
       flex-direction: column;
       width: 100%;
-      height: calc(100vh - 80px);
       position: absolute;
-      top: 80px;
+      top: 50px;
       left: -100%;
       opacity: 1;
       transition: all 0.5s ease;
-      background-color: var(--white);
+      background-color:#f0f0f0;
+      padding: 0px 2px
     }
   
     .nav-menu.active {
@@ -115,11 +116,15 @@
   
     .nav-item {
       margin: 1.5rem 0;
-      color:black
+      color:black;
     }
 
     .nav-item:hover{
       border-radius: 5px;
       background: gray;
+    }
+
+    #loginbutton{
+      font-size: 15px;
     }
   }

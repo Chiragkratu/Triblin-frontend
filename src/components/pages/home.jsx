@@ -11,7 +11,7 @@ const Home = () => {
         <div className="hero-content container">
           <h1 className='heading'>Measure, Offset, Lead <br/> Build a Sustainable Future with Triple Bottom Line </h1>
 
-          <p style={{fontFamily:'Times New Roman', fontSize:'1.5rem', color:'black'}}>
+          <p >
             Triblin is a sustainability intelligence platform helping governments, enterprises, small and medium scale business (SMBs) and communities track and improve their performance across People, Planet, and Profit — starting with verified carbon offsetting for events.
           </p>
           <div className="hero-buttons">
@@ -30,7 +30,7 @@ const Home = () => {
           <br />
           <div className='why-triblin-cards'>
             <div>
-              <img src={earth} alt="" style={{height:400,width:400, borderRadius:'5rem'}}/>
+              <img src={earth} alt="" />
             </div>
             <div>
               <h2>The future of accountability is integrated. <br /> Triblin is built on the Triple Bottom Line — a framework that balances:</h2>
@@ -45,7 +45,7 @@ const Home = () => {
                   Profit – transparent finance, ethical growth, and value beyond shareholders
                 </li>
               </ul>
-              <p style={{fontSize:'20px'}}>We’re starting with fast, affordable carbon offsetting for events — but that’s just the beginning.</p>
+              <p >We’re starting with fast, affordable carbon offsetting for events — but that’s just the beginning.</p>
 
               <button className='hero_button'>Explore the Triple Bottom Line →</button>
             </div>

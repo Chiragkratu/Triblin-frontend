@@ -1,19 +1,26 @@
-import React, { useState, useEffect ,useContext} from 'react';
+import { useState, useEffect ,useContext} from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from '../context/AuthContext';
 import '../styles/Navbar.css'
 import { Menu, X } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import PopupModal from './popupmodel';
+import Login from './Login';
+import Register from './Register';
+import { FaRegUserCircle } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { user, logout } = useContext(AuthContext);
+  const [register,setregister]=useState(false);
+
+  const {user,logoutuser,login,setlogin} = useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    logout();
-    navigate('/login');
+    setlogin(false);
+    logoutuser();
+    navigate('/');
   };
 
 
@@ -37,13 +44,13 @@ const Navbar = () => {
   return (
     <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
       <div className="navbar-container">
-        <Link to="/" className="navbar-logo">
-          Triblin
-        </Link>
-
         <div className="menu-icon" onClick={toggleMenu}>
           {isOpen ? <X size={24}/> : <Menu size={24} />}
         </div>
+
+        <Link to="/" className="navbar-logo">
+          Triblin
+        </Link>
 
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
           <li className="nav-item">
@@ -86,13 +93,37 @@ const Navbar = () => {
               Coming Soon
             </Link>
           </li>
-          <li className="nav-item">
-            <Link to="/blog" className="nav-link" onClick={() => handleLogout()}>
-              LoginOut
-            </Link>
-          </li>
+          
         </ul>
+        {(!user)?
+
+           <> <button id='loginbutton' style={{'background-color':'#7cf899', color:'black'}} onClick={()=>{
+                setlogin(true);
+                setregister(false);
+            }}>Login</button>
+
+          <PopupModal isOpen={login} onClose={() => setlogin(false)}>
+            <Login/>
+            <a onClick={()=>{
+                setlogin(false);
+                setregister(true);
+            }}>New user? Register now</a>
+          </PopupModal>
+
+          <PopupModal isOpen={register} onClose={() => setregister(false)}>
+            <Register/>
+            <a onClick={()=>{
+                setlogin(true);
+                setregister(false);                
+            }}>Existing User? Login Now</a>
+          </PopupModal>
+          </>:<>
+            <button id='loginbutton' style={{'background-color':'#7cf899', color:'black'}} onClick={handleLogout}>Logout</button>
+          </>
+      }
+          
       </div>
+      
     </nav>
   );
 };

@@ -15,6 +15,7 @@ function App() {
   const [user, setUser] = useState(null);
   const [token, setToken] = useState(localStorage.getItem('token') || null);
   const [loading, setLoading] = useState(true);
+  const [login,setlogin]=useState(false);
 
   useEffect(() => {
     // Check if user is logged in on component mount
@@ -47,13 +48,13 @@ function App() {
     checkAuth();
   }, [token]);
 
-  const login = (userData, token) => {
+  const loginuser = (userData, token) => {
     setUser(userData);
     setToken(token);
     localStorage.setItem('token', token);
   };
 
-  const logout = () => {
+  const logoutuser = () => {
     setUser(null);
     setToken(null);
     localStorage.removeItem('token');
@@ -64,19 +65,17 @@ function App() {
   }
 
   return (
-    <AuthContext.Provider value={{ user, token, login, logout }}>
+    <AuthContext.Provider value={{ user, token, loginuser, logoutuser, login,setlogin }}>
       <Router>
         <div className="app">
-          {(user) && <Navbar />}
+          <Navbar />
           <main className="container mt-4">
             <Routes>
-              <Route path="/login" element={!user ? <Login /> : <Navigate to="/home" />} />
-              <Route path="/register" element={!user ? <Register /> : <Navigate to="/home" />} />
-              <Route path="/home" element={user ? <Home /> : <Navigate to="/login" />} />
-              <Route path="/" element={<Navigate to={user ? "/home" : "/login"} />} />
-              <Route path="/how-it-works" element={user? <Working/>: <Navigate to="/login" />}/>
-              <Route path="/calculator" element={user? <Final_CTA/>: <Navigate to="/login" />}/>
-              <Route path="/offset-projects" element={user? <OffsetProjects/>: <Navigate to="/login" />}/>
+              <Route path="/" element={<Home/>}/>
+              <Route path="/home" element={<Home />}/>
+              <Route path="/how-it-works" element={<Working/>}/>
+              <Route path="/calculator" element={<Final_CTA/>}/>
+              <Route path="/offset-projects" element={<OffsetProjects/>}/>
             </Routes>
           </main>
         </div>
